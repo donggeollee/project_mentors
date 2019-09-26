@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c" 
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd
+		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	  
+	<!-- Enables the Spring MVC @Controller programming model -->  
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>    
+	
+	<beans:bean id="pagingInfoByTen" class="com.tje.mentors.setting.PagingInfoByTen" 
+	p:pagingSize="10" p:pageRange="5"/>
+	<beans:bean id="pagingInfo" class="com.tje.mentors.setting.PagingInfo"
+	p:pagingSize="5" p:pagingWidth="5"/>
+	<beans:bean id="pagingInfoByFour" class="com.tje.mentors.setting.PagingInfoByFour" 
+	p:pagingSize="4" p:pagingWidth="5"/> 
+	
+	
+	<context:component-scan base-package="com.tje.mentors" />
+	<context:component-scan base-package="com.tje.mentors.controller" /> 
+	<context:component-scan base-package="com.tje.mentors.services" />
+	<context:component-scan base-package="com.tje.mentors.repository" />
+	
+	<context:component-scan base-package="com.tje.mentors.social"/> 
+	<beans:bean id="naverLoginBO" class="com.tje.mentors.social.NaverLoginBO" />
+	
+	<beans:bean id="webSocketHandler"  
+	class="com.tje.mentors.controller.WebSocketHandler"/>
+	
+	<websocket:handlers>
+		<websocket:mapping handler="webSocketHandler" path="/inquiryChat"/>
+	</websocket:handlers> 
+  
+	<beans:bean id="multipartResolver" 
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+	p:maxUploadSize="10485760"/>
+	
+	<beans:bean id="authCheckInterceptor" class="com.tje.mentors.intercepter.AuthCheckIntercepter" />
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/mentor/myWriteLesson/**" />
+			<mapping path="/mentor/myLessonPicklist/**" />
+			<mapping path="/mentor/menteeNameSearch/**" />
+			<mapping path="/mentor/mentoring/**" />
+			<mapping path="/mentor/menteelist/**" />
+			<mapping path="/mentor/myPage/**" />
+			<mapping path="/mentor/lesson/**" />
+			
+			<mapping path="/mentee/personal/**" />
+ 
+			<!-- 
+			<exclude-mapping path="/mentee/login/**"/>
+			<exclude-mapping path="/mentee/naverlogin"/>
+			<exclude-mapping path="/mentor/login/**"/>
+			<exclude-mapping path="/mentor/login/**"/>
+			<exclude-mapping path="/mentee/regist/**"/>
+			<exclude-mapping path="/mentee/regist_emailCK"/>
+			<exclude-mapping path="/mentor/regist/**"/>
+			 -->
+			<beans:ref bean="authCheckInterceptor" />
+		</interceptor>
+	</interceptors> 
+	
+	</beans:beans>

@@ -1,0 +1,879 @@
+﻿ul,p {margin:0;}
+
+/*
+#341ca7
+*/
+
+img.dl_ico {
+	width:16px;
+	height:16px;
+	margin-right:5px;
+	margin-top:-2px;
+}
+
+div.cont_wrap {
+	overflow: hidden;
+}
+
+p.tit_desc_p {
+	color:#252a2b;
+	font-size:30px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom:50px;
+}
+
+p.tit_desc_p span {
+	font-size:18px;
+	font-weight: normal;
+}
+
+/* 회원가입 페이지 */
+
+div#select_regist_type {
+	margin-bottom:30px;
+}
+
+div#select_regist_type p {
+	margin-bottom:40px;
+}
+
+div#select_regist_type p span {
+	font-size:18px;
+	font-weight: normal;
+}
+
+div#select_regist_type ul {
+	width:40%;
+	margin:0 auto;
+	overflow:hidden;
+}
+div#select_regist_type ul li {
+	float:left;
+	width:45%;
+	cursor:pointer;
+}
+
+div#select_regist_type ul li:first-child {
+	margin-right:10%;
+}
+
+div#select_regist_type ul li div {
+	margin:0 auto;
+	padding:6px 12px;
+	color:#252a2b;
+	text-align:center;
+	font-size:14px;
+	font-weight:400;
+	background-color:#fff;
+	box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+	transition:0.5s;
+	border-radius:0.25rem;
+}
+div#select_regist_type ul li div:hover {
+	background-color:#ffc107;
+	color:#fff;
+}
+
+div.form_wrap {
+	margin-bottom:50px;
+	padding:40px;
+}
+
+div.form_wrap label {
+	font-weight:bold;
+	font-size:16px;
+}
+
+div.regist_form_wrap {
+	padding:40px;
+}
+
+div.regist_form_wrap label {
+	font-size:16px;
+}
+
+div.regist_form_wrap input {
+	border-radius:10px;
+}
+
+div.regist_btns {
+	overflow:hidden;
+}
+
+div.regist_btns a {
+	border:1px solid #3998fd;
+	padding:6px 18px;
+	box-sizing:border-box;
+	border-radius:10px;
+	color:#3998fd;
+	transition:0.5s;
+	font-size:16px;
+}
+
+div.regist_btns a:hover {
+	background-color:#3998fd;
+	color:#fff;
+}
+
+div.regist_btns a.prev_btn {
+	float:left;
+}
+div.regist_btns a.done_btn {
+	float:right;
+}
+
+
+div.social_login_box {
+	width:50%;
+	margin:0 auto;
+	margin-top: -20px;
+}
+
+div.social_login_box ul {
+	overflow:hidden;
+}
+
+div.social_login_box ul li {
+	float:left;
+	width:45%;
+	text-align:center;
+	padding:10px 0;
+}
+
+div.social_login_box ul li:first-child {
+	margin-right:10%;
+}
+
+
+div.social_login_box ul li img {
+	box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+	width:100%;
+}
+
+div.social_login_box ul li button {
+	border: none;
+}
+
+/* 로그인 페이지 로그인 버튼 */
+
+div.login_btn_wrap {
+	margin: 30px auto 0;
+}
+
+/* 중분류별 카테고리 선택 페이지*/
+
+div.cont ul.category_card {
+	padding:10px 0;
+	overflow: hidden;
+	margin:0 auto; 
+	width:90%;
+}
+
+div.cont ul.category_card li {
+	float: left;
+	width: 20%;
+	position:relative;
+	transition:0.3s;
+}
+
+div.cont ul.category_card li:hover {
+	transform:translate(-5px,-5px);
+}
+
+div.cont ul.category_card li div.card {
+	width:90%;
+	margin:0 auto;
+	box-sizing:border-box;
+	box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+	border: none !important;
+	background:#fff;
+}
+
+div.cont ul.category_card li div.card-img-area {
+	width: 100%;
+	height:13em;
+}
+
+div.cont ul.category_card li div.card-img-area img {
+	height:100%;
+}
+
+div.cont ul.category_card li h5 {
+	text-align: center;
+}
+
+div.cont ul.category_card li p {
+	text-align: center;
+}
+
+div.cont ul.category_card li p a{
+	background: none;
+	border:none;
+    color: #252a2b;
+    display: block;
+    padding: 1.25rem;
+}
+
+
+/* 레슨 리스트 페이지 */
+
+div.category_nav {
+	background:#000;
+	height:200px;
+}
+
+div.category_nav p {
+	text-align: center;
+	line-height: 200px;
+	font-size:28px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+	background:rgba(0,0,0,0.3);
+}
+
+div.cont_wrap > div {
+	float:left;
+}
+
+div.cont_wrap > div.lesson_right_area div#lessonList{
+	
+}
+
+div.cont_wrap div.lesson_left_area {	
+	width:20%;
+	overflow: hidden;
+}
+
+div.cont_wrap div.lesson_right_area {
+	padding-left:5%;
+	box-sizing:border-box;
+	width:80%;
+}
+
+div#categoryBox {
+	width:90%;
+	padding:10px;
+	box-sizing: border-box;
+	height:auto;
+	margin-top: 65px;
+	margin-bottom:10px;
+	margin-right:10px;
+	float: right;
+	background: #fff;
+	/*box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);*/
+
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 4px;
+}
+
+div#categoryBox ul {
+	margin-bottom:0;
+}
+
+div#categoryBox ul li {
+	box-sizing:border-box;
+	color: #666;
+	box-sizing: border-box;
+	margin-bottom:15px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+div#categoryBox ul li:first-child {
+	margin-top:15px;
+}
+
+div#categoryBox ul li label {
+	margin:0;
+}
+
+div#categoryBox ul li span,
+div#categoryBox ul li input,
+div#categoryBox ul li label
+ {
+	vertical-align: middle;
+}
+
+div#categoryBox ul li input {
+	background-color: #fff;
+}
+
+
+div#categoryBox ul li:last-child {
+	border-bottom: none;
+}
+
+div#categoryBox ul li span {
+	margin-left:15px;
+}
+
+div#categoryBox ul li span:hover {
+	
+}
+
+div#search_and_align {
+	width:99%;
+	text-align: left;
+	overflow: hidden;
+	margin-bottom:30px;
+}
+
+div#search_and_align div#searchBox {
+	overflow: hidden;
+	display: inline-block;
+	float: left;
+}
+
+div#search_and_align div#alignBox {
+	float: right;
+}
+
+div#search_and_align div#searchBox form {
+	float: left;
+	height:35px;	
+}
+
+div#search_and_align button,
+div#search_and_align select {
+	height:35px;
+	padding:0px 16px;
+	box-sizing: border-box;
+	font-size:13px;
+	line-height:35px;
+    border: 1px solid #e3e3e3;
+    vertical-align: top;	
+}
+
+div#search_and_align button {
+	background-color:#43d1f9;
+	color: #fff;
+	border: none;
+	transition:0.3s;
+}
+
+div#search_and_align button:hover {
+	background-color:#2f98b5;
+}
+
+div#search_and_align select {
+	margin-right:8px;
+}
+
+div#search_and_align select#listAlignment {
+	margin-right:0px;
+}
+
+
+div#search_and_align div#searchBox select#sido {
+	padding-right:40px;
+}
+
+div#search_and_align div#searchBox select#gugun {
+	padding-right:40px;
+}
+
+div#search_and_align div#alignBox select {
+	padding-right:35px;
+}
+
+div#lessonList ul {
+	background-color: #fff;
+	overflow: hidden;
+	width:99%;
+	/*box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);*/
+    border: 1px solid rgba(0, 0, 0, 0.125);
+	border-bottom: none;
+    border-radius: 4px;
+}
+
+div#lessonList ul li {
+	overflow: hidden;
+	padding:25px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #e3e3e3;
+	position:relative;
+}
+
+div#lessonList ul li.empty_lesson_msg {
+	text-align: center;
+	padding:50px 0;
+}
+
+div#lessonList ul li:hover {
+	
+}
+
+div#lessonList ul li > div {
+	float: left;
+}
+
+div.lesson_img_area {
+	margin-right:25px;
+}
+
+div.lesson_img_area  div.lesson_img {
+	overflow:hidden;
+	border-radius: 7px;
+	border: 1px solid #e3e3e3;
+	background-color: #fff;
+	width: 120px;
+	height: 100px;
+}
+
+div.lesson_img_area  div.lesson_img img {
+	width:100%;
+	height:100%;
+}
+
+div.lesson_desc_area {
+	width:70%;
+}
+
+div.lesson_desc_area p {
+	margin:0;
+}
+
+div.lesson_desc_area p.title {
+}
+
+div.lesson_desc_area p.title a {
+	font-size:18px;
+	font-weight: bold;
+	color:#666;
+}
+
+div.lesson_desc_area p.score_and_review img {
+	margin-top:-3px;
+	margin-right:5px;
+}
+
+div.lesson_desc_area p.score_and_review {
+	font-size:13px;
+}
+
+div.lesson_desc_area p.score_and_review span {
+	font-weight: bold;
+	color: #252a2b;
+}
+
+div.lesson_desc_area button {
+	padding:3px 10px;
+	border:none;
+	background:#bfbfbf;
+	color:#fff;
+	position:absolute;
+	bottom:25px;
+	right:25px;
+	border-radius:4px;
+	transition:0.3s;
+}
+
+/* 레슨 상세보기 페이지 */
+
+/* 레슨 상세보기 페이지 - 멘토 ?�로?? 부�? */
+div.cont div#mentor_profile_wrap {
+	float: left;
+	width:30%;
+	
+}
+
+div#mentor_profile {
+	background-color: #fff;
+	width:90%;
+	padding:30px 20px;
+	box-sizing: border-box;
+	text-align:center;
+	margin-left:10px;
+	border: 1px solid #e1e3e2;
+	border-radius: 4px;
+}
+
+div.cont div#mentor_profile p {
+	line-height:1em;
+}
+
+div#mentor_profile h4 {
+	color: #252a2b;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom:20px;
+}
+
+div#mentor_profile div.image_frame {
+	background-color:#ddd;
+	width:120px;
+	height:120px;
+	margin:0 auto;
+	border-radius: 20px;
+	overflow: hidden;
+	margin-bottom:30px;
+	text-align: center;
+	border:1px solid #eee;
+}
+
+div#mentor_profile div.image_frame img {
+	width: 100%;
+	height:100%;
+}
+
+div#mentor_profile p.name {
+	color: #252a2b;
+	font-size:15px;
+	letter-spacing: 1px;
+	margin-bottom:5px;
+}
+
+div#mentor_profile p.email {
+	color:#252a2b;
+	font-size:13px;
+	letter-spacing: 0.8px;
+	margin-top:3px;
+}
+
+div#mentor_profile p.info {
+	margin: 0 auto;
+	margin-top:20px;
+	width:80%;
+	line-height: 1.5em !important;
+	color: #252a2b;
+}
+
+div#mentor_profile button {
+	border:none;
+	background:#20c997;
+	margin-top:30px;
+	
+	padding:3px 10px;
+	border:none;
+	color:#fff;
+	border-radius:4px;
+}
+
+div.cont div#mentor_lesson_wrap {
+	float: left;
+	width:70%;
+}
+
+div#mentor_lesson {
+	width:95%;
+	margin: 0 auto;
+	letter-spacing: 1px;
+	border: 1px solid #e1e3e2;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+div.lesson_header {
+	position:relative;
+	padding:30px;
+}
+
+div.lesson_header h4.title {
+	font-size:20px;
+	color: #252a2b;
+	font-weight:bold;
+	width:75%;
+}
+
+div.lesson_header p {
+	color:#252a2b;
+	font-size:13px;
+}
+
+div.lesson_header p.loca {
+	
+}
+
+div.lesson_header p.round_and_price {
+	
+}
+
+div.lesson_header p.review {
+	
+}
+
+div.lesson_header button {
+	color:#fff;
+	border:none;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+div.lesson_header button#likeBtn {
+	position: absolute;
+	bottom:80px;
+	right:30px;
+	
+	padding:3px 10px;
+	border:none;
+	background:#bfbfbf;
+	color:#fff;
+	border-radius:4px;
+}
+
+div.lesson_header button#applyBtn {
+	position: absolute;
+	bottom:30px;
+	right:30px;
+	background:#26baee;
+		
+	padding:3px 10px;
+	border:none;
+	color:#fff;
+	border-radius:4px;
+}
+
+div#mentor_lesson ul li {
+	padding: 30px;
+	border-top: 1px solid #e1e3e2;
+	overflow: hidden;
+}
+
+div#mentor_lesson > ul li p, div#mentor_lesson ul li div {
+	float: left;
+}
+
+div#mentor_lesson ul li p {
+	width: 18%;
+	font-weight: bold;
+	color:#252a2b;
+	font-size:13px;
+	letter-spacing: 1px;
+}
+
+div#mentor_lesson ul li div {
+	width: 75%;
+	color:#252a2b;
+}
+
+div#mentor_lesson ul li div.thum {
+	width: 82%;
+}
+
+/* 레슨 이미지 썸네일 */
+div#mentor_lesson div.thum img {
+	width:150px;
+	height:150px;
+}
+/* 리뷰 영역 */
+div#review_area {
+	width:95%;
+	margin:0 auto;
+	margin-top:30px;
+	padding:20px 0;
+	box-sizing: border-box;
+}
+
+div#review_area p {
+	font-weight:bold;
+	color: #252a2b;
+	font-size:13px;
+	letter-spacing:1px;
+	line-height:1.0em;
+}
+
+div#review_area p span {
+	color:#ffc107;
+	font-size:20px;
+}
+
+div#review_area ul {
+	border-top:1px solid #252a2b;
+	padding-top:10px;
+	margin-top:10px;
+}
+
+div#review_area ul li {
+	font-size:13px;
+	letter-spacing: 1px;
+	background:#fff;
+	border: 1px solid #e1e3e2;
+    border-radius: 4px;
+    overflow: hidden;
+    padding:20px;
+    box-sizing:border-box;
+    position:relative;
+    margin-top:-1px;
+}
+
+div#review_area ul li p {
+	font-weight:normal;	
+}
+
+div#review_area ul li p.mentee_name {
+	margin-bottom:15px;
+}
+
+div#review_area ul li p.mentee_name span {
+	font-size:13px;
+	font-weight:bold;
+	vertical-align: top;
+	margin-left:5px;
+}
+
+div#review_area ul li p.review_cont {
+	letter-spacing: 0.5px;
+	line-height: 1.5;
+}
+
+div#review_area ul li p.review_date {
+	position:absolute;
+	 top:20px;
+	 right:20px;
+	 color:#8e8e8e;
+	 font-size:12px;
+}
+
+
+/* 반응형 작업 */
+
+@media (max-width: 991.98px){
+	
+	div.cont {
+		float: none;
+		width: 100%;
+		position:relative;
+		transition:0.3s;
+		margin-bottom:3em;
+	}
+	
+	div.cont ul.category_card li div.card-img-area {
+		height:8em;
+	}
+	
+	div.cont_wrap > div {
+		float: none;
+		width: 100% !important;
+		margin:0;
+		padding:0;
+	}
+	
+	div#categoryBox {
+		width: 100%;
+		float: none;
+		margin:0;
+	}
+	
+	div#categoryBox ul {
+		overflow: hidden;
+	}
+	
+	div#categoryBox ul li {
+		float: left;
+		width: 50%;
+		margin:0;
+	}
+	
+	div#categoryBox ul li:first-child {
+	 	margin-top:0;
+	 }
+
+	div.cont_wrap div.lesson_right_area {
+		padding-left:0;
+	}
+	
+	div#search_and_align,div#lessonList ul {width:100%;}
+	
+	div#search_and_align {margin:20px 0;}
+	
+}
+
+@media (max-width: 600px){
+	
+	div.cont ul.category_card li {
+		float: none;
+		width: 100%;
+		position:relative;
+		transition:0.3s;
+		margin-bottom:3em;
+	}
+	
+	div.cont ul.category_card li div.card {
+		width: 100%;
+		margin:0;
+	}
+	
+	div.cont ul.category_card li:hover {
+		transform:translate(0px,0px);
+	}
+	
+	div.cont ul.category_card li div.card-img-area {
+		height:15em;
+	}
+	
+	div.cont ul.category_card {
+		width:100%;
+	}
+	
+	div#searchBox {
+		width:100%;
+		margin:10px 0 30px;
+	}
+	
+	div#searchBox form {
+		width:66.6%;
+	}
+	
+	div#searchBox form select {
+		width:50%;
+		background-image: none;
+		padding:0 !important;
+		text-align-last: center;
+	}
+	
+	div#searchBox button {
+		width:33.3%;
+		padding:0 !important;
+		text-align-last: center;
+	}
+	
+	div#searchBox select, div#searchBox button {
+		margin:0;
+	}
+	
+		div.lesson_desc_area {
+		width:60%;
+	}
+		
+	
+	div.lesson_desc_area p.title {
+		margin-bottom:5px;
+	}
+	
+	div.lesson_desc_area p {
+		line-height:1.7em;
+	}
+	
+	
+
+}
+
+@media (max-width: 375px){
+	
+	div#lessonList ul li {
+	    overflow: hidden;
+	    padding: 15px;
+	    box-sizing: border-box;
+	    border-bottom: 1px solid #e3e3e3;
+	}
+	
+	div#categoryBox ul li {
+		padding-left:5px;
+	}
+	
+	div#categoryBox ul li span {
+    	margin-left: 5px;
+	}
+	
+	div#search_and_align {
+    	margin-bottom: 0px;
+	}
+	
+	div.lesson_desc_area p.title a {
+	    font-size: 1.2em;
+	}
+	
+}
+

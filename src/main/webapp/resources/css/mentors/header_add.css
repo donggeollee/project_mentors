@@ -1,0 +1,144 @@
+/*상단 헤더에 들어갈 프로필 사진 영역*/
+
+nav.navbar ul li.top_profile_wrap {
+	position: relative;
+    letter-spacing: 0.8px;
+    vertical-align: bottom;
+    /*padding:14px !important;*/
+    cursor: pointer;
+}
+
+nav.navbar ul li.top_profile_wrap p {
+	margin:0;
+	font-size:15px;
+}
+
+nav.navbar ul li.top_profile_wrap a {
+	padding-right: 0 !important;
+}
+
+nav.navbar ul li.top_profile_wrap span {
+	vertical-align: middle;
+}
+
+nav.navbar ul li.top_profile_wrap span.top_profile {
+	width:30px;
+	height: 30px;
+	display: inline-block;
+	background: #fff;
+	border-radius: 15px;
+	overflow: hidden;
+	text-align: center;
+	border:1px solid #eee;
+	margin-right:8px;
+	box-sizing: border-box;
+}
+
+nav.navbar ul li.top_profile_wrap span.top_profile img {
+	width:100%;
+	height:100%;
+	vertical-align: top;
+}
+
+div.alarm a {
+	height:30px;
+}
+
+div.alarm a span {
+	font-size:13px;
+	vertical-align: top;
+}
+
+div.alarm a span.bell_icon {
+	vertical-align: middle;
+}
+
+div.alarm a span.bell_icon img {
+	width:25px;
+	height:25px;
+	margin-right:5px;
+}
+
+div.alarm a span#unread_count {
+	line-height:1;
+	padding:0 6px;
+	height:20px;
+	line-height:20px;
+	background:#78d5ef;
+	color:#fff;
+	border-radius:3px;
+	vertical-align:middle;
+}
+
+/*멤버 드롭박스*/
+div.member_dropbox {
+	padding:10px 0;
+	display:none;
+	border:1px solid #eee;
+	position:absolute;
+	top:58px;
+	right:0px;
+	background-color: #fff;
+	border-radius: 3px;
+	height:auto;
+}
+
+div.member_dropbox ul {
+	margin:0;
+	width:200px;
+}
+
+div.member_dropbox ul li {
+	position:relative;
+}
+
+div.member_dropbox ul li a {
+	color: #6c7a7d;
+	font-size: 15px;
+	padding:10px 0px;
+	display:block;
+	text-align:center;
+}
+
+.icon-bell {
+	vertical-align: middle;
+	margin-right:0 !important; 
+}
+
+/**/
+div.message_alarm {
+	left:-150px;
+	right:auto;
+	top:41px;
+}
+
+/**/
+nav.navbar ul li.open_menu {
+	display: none;
+}
+
+
+@media (max-width: 991.98px){
+	nav.navbar ul li.top_profile_wrap p {
+	    padding-left: 20px;
+	    padding-right: 0;
+	    padding-top: .9rem;
+	    padding-bottom: .9rem;
+	}
+	
+	div.alarm {
+		padding-left: 20px;
+	    padding-right: 0;
+	    padding-top: .9rem;
+	    padding-bottom: .9rem;
+	}
+	
+	nav.navbar ul li.close_menu {
+		display: none;
+	}
+	
+	nav.navbar ul li.open_menu {
+	display: block;
+	}
+	
+}

@@ -1,0 +1,1185 @@
+
+/* 웹소켓 채팅 admin */
+div.chat_content_wrap {
+	margin-top:10px;
+	overflow:hidden;
+	padding:10px; 
+	box-sizing: border-box;
+	background: #fff;
+}
+
+div.chat_content_wrap > div {
+	float: left;
+	border: 1px solid #e3e3e3;
+	border-radius:4px;
+	height:650px;
+}
+
+div.chat_list_area {
+	width:30%;
+	box-sizing: border-box;
+	margin-right:2%;
+}
+
+div.chat_list_area div.list_scroll {
+	height:75%;
+    overflow-y: auto;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+div.chat_list_area > div > p {
+	text-align:center;
+	font-weight: bold;
+	color: #252a2b;
+	background: #ececec;
+}
+
+div.chat_list_area > div:first-child > p {
+	border-top: none;
+}
+
+div.chat_list_area > div {
+	height: 50%;
+	box-sizing: border-box;
+}
+
+div.chatting_area {
+	width:65%;
+	box-sizing: border-box;
+	position: relative;
+}
+
+div.chatting_area > p {
+	text-align:center;
+	font-weight: bold;
+	color: #252a2b;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+div#nowChatting {
+	height:500px;
+	overflow-x: hidden;
+    overflow-y: auto;
+    padding:20px;
+    box-sizing:border-box;
+    
+}
+
+div#nowChatting p.msg {
+	text-align: center;
+}
+
+div.chat_input_box {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+}
+
+div.chat_input_box input {
+	height:100px;
+	padding: 0;
+	box-sizing: border-box;
+	border:1px solid #ddd;
+	vertical-align: bottom;
+}
+
+
+div.chat_input_box input#writeMsg{
+	width: 80%;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+}
+
+div.chat_input_box input#sendBtn{
+	width: 20%;
+	border:none;
+	color:#fff;
+	background: #469ef1;
+}
+
+
+/*사이드(왼쪽) 네비게이션이 있는 페이지의 오른쪽 컨텐트 페이지*/
+div#content_wrap #right_content {
+	padding: 50px 50px 0px;
+	height: auto;
+	box-sizing: border-box;
+	width: 80%;
+	position: relative;
+}
+
+h3.normal_title {
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom:30px;
+}
+
+h3.content_title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 60px;
+	line-height: 0.8em;
+}
+
+h3.first_h3 {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 0;
+}
+
+p.title_desc {
+	font-size: 13px;
+}
+
+ul.no_data li {
+	text-align: center;
+}
+
+
+ul.list_style1 {
+	width: 80%;
+	background:#fff;
+	border-radius: 4px;	
+	border: 1px solid #e1e3e2;
+	margin-top:15px;
+}
+
+ul.list_style1 li {
+	position: relative;
+	padding: 20px;
+	border-top: 1px solid #e1e3e2;
+	box-sizing: border-box;
+}
+
+ul.list_style1 li:first-child {
+	border-top:none;
+}
+
+ul.list_style1 li p {
+	margin: 0;
+	letter-spacing: 0.5px;
+	color: #252a2b;
+}
+
+ul.list_style1 li p.category {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 13px;
+	letter-spacing: 0px;
+	line-height: 1em;
+}
+
+ul.list_style1 li p.title {
+		margin-top: 5px;
+}
+
+ul.list_style1 li p.title a {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1em;
+	color:#252a2b;
+}
+
+ul.list_style1 li p.review {
+	font-size: 13px;
+	margin-top: 15px;
+}
+
+div.select_wrap {
+	text-align: right;
+	width: 80%;
+}
+
+
+select.select_style1 {
+	height: 35px;
+    padding: 0px 16px;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 35px;
+    border: 1px solid #e3e3e3;
+    vertical-align: top;
+}
+
+select.select_style1 option {
+	
+}
+
+/* 멘토링 완료 레슨의 리뷰 작성 버튼 */
+button.review_write_btn {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	
+	border: none;
+	padding:3px 10px;
+	background:#f5de18;
+	color: #fff;
+	border-radius:4px;
+	font-size:12px;
+}
+
+div.written_review {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	border: none;
+	padding: 3px 10px;
+	background: #c5c5c5;
+	color: #fff;
+	font-size:12px;
+	border-radius: 4px;
+}
+
+/* 멘티 나의 모든 레슨 - 리뷰작성*/
+#review_form {
+	display:none;
+	background: rgba(255, 255, 255, 1);
+	width: 450px;
+	height: auto;
+	z-index: 2; 
+	padding: 20px 40px;
+	padding-bottom:40px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fafafa;
+	box-shadow: 5px 3px 7px 0.03px rgba(0, 0, 0, 0.1);
+}
+
+#review_form h4 {
+	border-bottom: 1px solid #d5d5d5;
+	font-size:16px;
+	padding-bottom:15px;
+	margin-bottom:15px;
+	color: #808080;
+}
+
+#review_form p.title_wrap {
+	font-size:20px;
+	color:#252a2b;
+}
+
+#review_form p.score_desc {
+	text-align: center;
+	line-height:1em;
+}
+
+#review_form select {
+	width:25%;
+	padding-left:8%;
+	display: block;
+	margin:0 auto;
+	background: url("../../images/mentors/arrow_drop_down.png") no-repeat 90% 50%;
+	background-size: 20px 20px;
+	background-color: #fff;
+	border-radius: 3px;
+}
+
+#review_form textarea {
+	display: block;
+	margin:0 auto;
+	width:100%;
+	margin-top: 20px;
+	height:150px;
+	resize: none;
+	box-sizing: border-box;
+	padding:10px;
+	text-indent: 0px;
+	border-radius: 3px;
+}
+
+#review_form p.button_wrap {
+	margin-top:20px;
+}
+
+#review_form p.button_wrap button {
+	border: none;
+	background: none;
+	width: 49%;
+	box-sizing: border-box;
+	font-size:14px;
+	padding:10px;
+}
+
+button.review_close_btn{
+	background-color:#eee !important;
+	color:#808080;
+}
+
+button.review_write_submit_btn {
+	background-color:#20c997 !important;
+	color:#fff;
+}
+
+
+/* 나의 모든 레슨 - 관리자 문의를 위한 박스 */
+div.admin_chat_desc {
+	margin-top: 30px;
+	position: relative;
+	width: 80%;
+	margin-bottom: 50px;
+	text-align: right;
+	padding-right: 20px;
+}
+
+div.admin_chat_desc p {
+	line-height: 1.5em;
+	margin: 0;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+div.admin_chat_desc button {
+	border: none;
+	padding: 6px 14px;
+	background: #6f42c1;
+	color: #fff;
+}
+
+
+/* 나의 멘토 */
+ul.list_style_profile {
+	width: 80%;
+}
+
+ul.list_style_profile li {
+	position: relative;
+	margin-top: 15px;
+	border:1px solid #e1e3e2;
+	border-radius:4px;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 20px;
+	background:#fff;
+}
+
+ul.list_style_profile li>div {
+	float: left;
+	box-sizing: border-box;
+}
+
+ul.list_style_profile li div.image {
+	padding: 0;
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+	border-radius: 35px;
+	margin-right: 20px;
+}
+
+ul.list_style_profile li div.image img {
+	width: 100%;
+}
+
+ul.list_style_profile li div.text p {
+	margin: 0;
+	line-height: 1.5em;
+	color:#252a2b;
+}
+
+ul.list_style_profile li div.text p span {
+	color:#252a2b;
+}
+
+ul.list_style_profile li div.text p.phone {
+	margin-top:5px;
+	font-weight:bold;
+	color:#607d8b;
+}
+
+/* 값을 전달하기 위한 mentor_id 값 숨김*/
+ul.list_style_profile li div.text .id {
+	display: none;
+}
+
+ul.list_style_profile li div.text p.name_email {
+	margin-top: 4px;
+}
+
+ul.list_style_profile li div.text span.name {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+ul.list_style_profile li div.text button.send_msg {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	border: none;
+	padding:3px 10px;
+	background:#20c997;
+	color: #fff;
+	border-radius:4px;
+	font-size:12px;
+}
+
+ul.like_lesson {
+	background: none;
+	border: none;
+}
+
+ul.like_lesson p.like_cancle_btn {
+	text-align: right;
+}
+
+ul.like_lesson li {
+	position: relative;
+	margin-top:15px;
+	background: #fff;
+	border-radius:4px;
+	border:1px solid #e1e3e2;
+}
+
+ul.like_lesson li:first-child {
+	border-top:1px solid #e1e3e2;
+}
+
+ul.like_lesson button {
+	padding:3px 10px;
+	background:#03a9f4;
+	color: #fff;
+	border-radius:4px;
+	font-size:12px;
+	border:none;
+	position:absolute;
+	bottom:20px;
+	right:20px;
+}
+
+/* 멘티 마이페이지 */
+
+div.change_img_box {
+	width:80%;
+	overflow: hidden;
+	padding:20px;
+    border: 1px solid #e1e3e2;
+	background-color:#fff;
+    border-radius: 4px;
+	box-sizing: border-box;
+	position: relative;
+}
+
+div.change_img_box p {
+	margin-bottom:0;
+}
+
+div.change_img_box > div {
+	float: left;
+}
+
+div.change_img_box div.img {
+	width:70px;
+	height:70px;
+	overflow: hidden;
+	border-radius: 35px;
+	margin-right: 20px;\
+	border: 1px solid #e1e3e2;
+}
+
+div.change_img_box div.img img {
+	width: 100%;
+	height: 100%;
+}
+
+div.change_img_box button{
+	border:none;
+	padding:3px 10px;
+	background: #03a9f4;
+	position: absolute;
+	bottom:20px;
+	right:20px;
+	color:#fff;
+	font-size:12px;
+	border-radius: 4px;
+}
+
+
+
+/* 모바일 작업
+ @media (max-width: 1220px) {
+ 
+	 div.change_img_box {
+		width:100%;
+		overflow: hidden;
+		padding:20px;
+		box-shadow: 5px 3px 7px 0.03px rgba(0, 0, 0, 0.1);
+		box-sizing: border-box;
+		text-align: center;
+	}
+	
+	div.change_img_box > div {
+		float: none;
+	}
+	
+	div.change_img_box div.img {
+		margin: 0 auto;
+		margin-bottom:10px;
+	}
+	
+	div.change_img_box div.img {
+		width:150px;
+		height:150px;
+	}
+	
+	div.change_img_box button{
+		border:2px solid #343a40;
+		padding:6px 14px;
+		background: #fff;
+		transition:0.3s;
+		position: static;
+		margin:10px 0;
+	}
+ 
+ }
+ */
+
+/* 멘티 마이페이지 프로필 */
+div.profile_area {
+	width:80%;
+	overflow: hidden;
+	padding:20px;
+	box-sizing: border-box;
+	position: relative;
+	border: 1px solid #e1e3e2;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+div.profile_area ul {margin-bottom:0}
+
+div.profile_area ul li {
+	padding:10px;
+	/*border: 1px solid #00ffff;*/
+}
+
+div.profile_area ul li span {
+	display: inline-block;
+	width: 40%;
+	/*border: 1px solid #00ffff;*/
+	vertical-align: top;
+	color:#808080;
+	line-height: 30px;
+}
+
+div.profile_area input {
+	border: 1px solid #e1e3e2;
+	background: #f5f5f5;
+	vertical-align: top;
+	width:60%;
+	box-sizing: border-box;
+	height:30px;
+}
+
+div.profile_area input.blank {
+	background: #fff;
+	text-indent: 10px;
+	border: 1px solid #e1e3e2;
+}
+
+div.profile_area ul li.info_change_btn_wrap {
+	padding:0;
+	padding-top:10px;
+	padding-right:10px;
+	padding-bottom:5px;
+	text-align: right;
+}
+
+.info_change_btn_wrap button {
+	transition:0.3s;	
+	border: none;
+    padding: 3px 10px;
+    background: #03a9f4;
+    border-radius: 4px;
+    color: #fff;
+}
+
+div.info_change_btn_wrap button:hover {
+	background: #343a40;
+	color:#fff;
+}
+
+div.profile_area p {
+	margin:0 !important;
+}
+
+div.info_change_btn_wrap {
+	margin-top:20px;
+	text-align: right;
+}
+
+/* 멘토 마이페이지 */
+
+/* 멘티 마이페이지 프로필 */
+div.category_box {
+	width:80%;
+	overflow: hidden;
+	padding:20px;
+	box-sizing: border-box;
+	position: relative;
+	margin-top: 10px;
+	border: 1px solid #e1e3e2;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+div.my_profile_box {
+	width:80%;
+	overflow: hidden;
+	padding:20px;
+	box-sizing: border-box;
+	position: relative;
+	margin-top: 10px;
+	border: 1px solid #e1e3e2;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+div.info_update_btn {
+	text-align: right;
+	padding-top: 15px;
+}
+
+div.info_update_btn button {
+	transition:0.3s;
+	border: none;
+    padding: 3px 10px;
+    background: #03a9f4;
+    border-radius:4px;
+    color:#fff;
+}
+
+textarea#myinfo {
+	display: block;
+	margin:0 auto;
+	width:100%;
+	height:150px;
+	resize: none;
+	box-sizing: border-box;
+	padding:10px;
+	text-indent: 0px;
+	border-radius: 3px;
+}
+
+/* 
+
+#lesson_detail_form{
+	display:none;
+	background: rgba(255, 255, 255, 1);
+	width: 450px;
+	height: auto;
+	z-index: 2; 
+	padding: 20px 40px;
+	padding-bottom:40px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fafafa;
+	box-shadow: 5px 3px 7px 0.03px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* 멘토 - 레슨 작성 페이지 */
+div#lesson_write {
+	background:#fff;
+	width:98%;
+	margin:0 auto;
+	border: 1px solid #e1e3e2;
+	border-radius: 4px;
+}
+
+div#lesson_write p {
+	margin:0;
+}
+
+div#lesson_write p.loca_desc {
+	margin-top:3px;
+	font-size:13px;
+}
+
+div#lesson_write p.upload_desc {
+	margin-top:20px;
+}
+
+div#lesson_write p.upload_desc span {
+	color:red;
+	font-weight: bold;
+}
+
+div#lesson_write ul li {
+    border-top: 1px solid #e1e3e2;
+	overflow: hidden;
+	padding:25px 20px;
+	box-sizing: border-box;
+}
+
+div#lesson_write ul li:first-child {
+	border-top:none;
+}
+
+div#lesson_write ul li > h4,
+div#lesson_write ul li > div {
+	float: left;
+}
+
+div#lesson_write ul li > h4 {
+	font-size:16px;
+	font-weight: bold;
+	color:#252a2b;
+	width:20%;
+	letter-spacing: 1px;
+}
+
+div#lesson_write ul li h4 span {
+	color:#ff0000;
+	margin-right:2px;
+}
+
+div#lesson_write ul li > div {
+	width: 80%;
+}
+
+div#lesson_write ul li > div input {
+	padding:5px 10px;
+	margin-right:7px;
+	text-indent: 0px;
+}
+
+div#lesson_write input,
+div#lesson_write textarea 
+ {
+	width: 60%;
+}
+
+div#lesson_write input#total_round,
+div#lesson_write input#price 
+{
+	width:15%;
+}
+
+div#lesson_write textarea {
+	resize: none;
+	height:150px;
+	padding:10px;
+	box-sizing: border-box;
+}
+
+div#lesson_write button {
+	vertical-align: bottom;
+	border: none;
+	padding:5px 14px;
+	border:1px solid #26c15e;
+	background: #26c15e;
+	color: #fff;
+	border-radius:4px;
+}
+
+div#lesson_write div.imageUpload input {
+	width:40%;
+	background:#eee;
+	padding:3px 14px;
+	padding-left:3px;
+}
+
+div.input_file_wrap {
+	margin-bottom: 10px;
+}
+
+div#lesson_write button#lesson_write_btn {
+	padding:15px 30px;
+	border:none;
+	color:#fff;
+	background: #fd7e14;
+	float: right;
+	margin-top: 15px;
+	
+}
+
+
+@media (max-width: 991.98px){
+	
+}
+
+@media (max-width: 600px){
+	
+}
+
+@media (max-width: 375px){
+	
+}
+
+
+/* 멘토 나의 레슨을 찜한 멘티 */
+
+/* 공통 테이블 스타일 */
+
+table.table_style1 {
+	
+	width: 80%;
+	text-align: center;
+	margin:20px 0;
+	color: #252a2b;
+	/*box-shadow: 5px 3px 7px 0.03px rgba(0, 0, 0, 0.1);*/
+	background-color: #fff;
+	border: 1px solid #e1e3e2;
+	border-top: 2px solid #17a2b8;
+	border-radius: 4px;
+}
+
+.table_style1 thead tr {
+
+}
+
+.table_style1 thead th {
+	border-bottom: 1px solid #e1e3e2;
+	padding:7px 7px;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing:1px;
+	color: #252a2b;
+}
+
+.table_style1 tbody td.title_td {
+	color: #252a2b;
+} 
+
+.table_style1 tbody tr:hover {
+	
+}
+
+.table_style1 tbody td {
+	padding:10px;
+	letter-spacing:0.5px;
+	font-size:13px;
+}
+
+.table_style1 tbody td button {
+	color:#fff;
+	border: none;
+	font-size:12px;
+	padding: 3px 10px;
+    background: #03a9f4;
+    border-radius: 4px;
+}
+
+table.table_style2 {
+	width:100%;
+}
+
+table.table_style2 th, table.table_style2 td {
+	border-bottom:1px solid #e1e3e2;
+	padding:8px 0;
+}
+
+table.table_style2 td.lesson_title {
+	text-align: left;
+	padding-left:10px;
+	padding-right:10px;
+	color: #252a2b;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+div.search_box_wp {
+	width:80%;
+	overflow: hidden;
+}
+
+div.search_box_by_mentee_name {
+	float:left;
+}
+
+div.search_box_by_mentee_name input {
+	height:34px;
+	line-height: 34px;
+}
+
+div.search_box_by_mentee_name img {
+	background:#fff;
+	border: 1px solid #d5d5d5;
+	padding:1px;
+	box-sizing: content-box;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+div.select_wrap2 {
+	width:auto;
+	float:right;
+}
+
+div#total_list_size {
+	margin-top:40px;
+}
+
+div#total_list_size p#menteeNum {
+	color: #252a2b;
+	font-weight: bold;
+}
+
+
+/* 관리자 페이지 로그인 */
+div.login {
+  top:50%;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 40px;
+  width: 100%;
+  
+  }
+  
+div.loginForm{
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+ }
+ 
+div.input-box{
+	padding-top: 8px;
+}
+
+div.loginForm button#adminLoginBtn{
+	background-color: white; 
+	padding: 3px 3px;
+	color: #0c2f54;
+	border: 1.5px solid #0c2f54;
+	border-radius: 4px;
+	cursor: pointer;
+	margin: 15px;
+	font-size: 13px;
+    transition-duration: 0.3s;
+}
+  
+div.loginForm button#adminLoginBtn:hover{
+	background-color: #0c2f54;
+    color: white;
+}
+  
+/* 관리자 (회원/레슨 관리 페이지) */
+div.select_wrap3 {
+	width: 100%;
+}
+
+div.table_content {
+	width: 100%;
+}
+
+div.pagePart{
+	padding-top: 15px;
+	text-align: center;
+}
+
+
+div.button_content {
+	text-align: right;
+}
+
+
+div.button_content button#selectTotalBtn{
+    background-color: white; 
+	padding: 3px 3px;
+	color: #130046;
+	border: 1.5px solid #0c2f54;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 15px;
+	font-size: 13px;
+	transition-duration: 0.3s;
+}
+
+
+div.button_content button#selectTotalBtn:hover{
+	background-color: #0c2f54;
+    color: white;
+}
+
+
+div.button_content button#secessionBtn{
+	background-color: white; 
+	padding: 3px 3px;
+	color: #590609;
+	border: 1.5px solid #590609;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-right:8px;
+	font-size: 13px;
+    transition-duration: 0.3s;
+}
+
+div.button_content button#secessionBtn:hover{
+	background-color: #590609;
+    color: white;
+}
+
+div.select_wrap button.lesson_totalBtn{
+	background-color: #03a9f4; 
+	padding: 3px 10px;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-right:8px;
+	font-size: 12px;
+    transition-duration: 0.3s;
+	
+}
+
+
+div.select_wrap button.lesson_totalBtn:hover{
+background-color: #0b97af;
+    color: white;
+	
+}
+
+div#lesson_detail_form {
+	display:none;
+	width:70%;
+	background: #fff;
+	padding:30px;
+	box-sizing: border-box;
+	border: 2px solid #17a2b8;
+	border-radius: 4px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+div#lesson_detail_form h4 {
+	font-size:13px;
+}
+
+div#lesson_detail_form h5 {
+	text-align: center;
+	margin-top:15px;
+}
+
+div#lesson_detail_form p {margin: 0;}
+
+div#lesson_detail_form p.category {
+	position:absolute;
+	top:30px;
+	right:30px;
+}
+
+div#lesson_detail_form p.title {
+	color: #252a2b;
+	font-size:18px;
+	font-weight: bold;
+	margin-bottom:15px;
+}
+
+div#lesson_detail_form div.mentor_profile {
+}
+
+div#lesson_detail_form ul {
+	border-top: 2px solid #e1e3e2;
+	padding:10px 20px;
+	box-sizing: border-box;
+	margin-bottom:30px;
+}
+
+div#lesson_detail_form ul li {
+	text-align: center;
+}
+
+div#lesson_detail_form div.button_wrap {
+	
+}
+
+div#lesson_detail_form div.button_wrap button {
+	width:49%;
+	box-sizing: border-box;
+	padding:10px 0;
+	border:none;
+	background:#03a9f4;
+	color:#fff;
+	border-radius: 4px;
+}
+
+div#lesson_detail_form div.button_wrap button.review_close {
+	background:#c3c3c3;
+}
+
+/* 멘토링 요청 확인 */
+
+div.mentoring_confirm {
+	margin-top:10px;
+	text-align:right;
+}
+ 
+div.mentoring_confirm button {
+	color: #fff;
+    border: none;
+    font-size: 12px;
+    padding: 3px 10px;
+    background: #03a9f4;
+    border-radius: 4px;
+}
+
+div.mentoring_confirm button.mentoring_no_btn {
+	background:#fd7e14;
+}
+
+/* 나의 멘티 */
+
+div.mentee_list_wrap {
+	width:80%;
+	background:#fff;
+	border-radius:4px;
+	border: 1px solid #e1e3e2;
+	padding:20px;
+	box-sizing:border-box;
+	margin-top:15px;
+}
+
+div.mentee_list_wrap p, div.mentee_list_wrap ul li {
+	color: #252a2b;
+}
+
+div.mentee_list_wrap p.lesson_title {
+	font-size: 20px;
+    font-weight: bold;
+    line-height: 1em;
+    margin-top: 5px;
+    color: #252a2b;
+}
+
+
+div.mentee_list_wrap p.mentee_count {
+
+}
+
+div.mentee_list_wrap ul {
+	border-top:1px solid #e1e3e2;
+	padding: 1rem;
+	box-sizing:border-box;
+	margin-bottom:0;
+	position:relative;
+}
+
+div.mentee_list_wrap ul li {
+}
+
+div.mentee_list_wrap ul li input[type=button] {
+	border: none;
+    padding: 3px 10px;
+    background: #03a9f4;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+}

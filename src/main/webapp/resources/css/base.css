@@ -1,0 +1,247 @@
+/* Base (�깭洹� 媛� 由ъ뀑) */ 
+* {
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0.07em !important;
+	color: #666;
+	font-size:13px;
+}
+
+body {
+	background-color:#faf9fa !important;
+}
+
+hr {
+	display: none
+}
+
+caption, legend {
+	position: absolute;
+	top: -9999px;
+	overflow: hidden;
+	text-indent: -1000em;
+}
+
+legend {
+	display: none;
+	visibility: hidden;
+}
+
+a {
+	color: #666;
+	text-decoration: none;
+}
+
+a:focus, a:hover, a:active {
+	color: #666;
+	text-decoration: none;
+}
+
+input.text, input.password, textarea.textarea {
+	height: 28px;
+	margin: 0;
+	padding: 0px;
+	vertical-align: top;
+	border: 1px solid #aaaaaa;
+	background: #ececec;
+}
+
+input.file {
+	height: 28px;
+	margin: 0;
+	vertical-align: top;
+	border: 1px solid #aaaaaa;
+	background: #ececec;
+}
+
+input.button, input.submit, input.image, button {
+	cursor: pointer;
+}
+
+input.checkbox {
+	width: 12px;
+	height: 12px;
+	margin-top: -1px;
+	vertical-align: middle;
+	border: 1px solid #404040;
+}
+
+input[type="text"] {
+	text-indent: 10px;
+	border: 1px solid #d5d5d5;
+	vertical-align: middle;
+}
+
+input[type="text"]::-ms-clear {
+	display: none;
+}
+
+input[type="radio"] {
+	width: 15px;
+	height: 15px;
+	vertical-align: middle;
+	border: 1px solid #a8a8a8;
+	border-radius: 50%;
+	background-color: #fff;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+input[type="radio"]:checked {
+	
+}
+
+input[type="checkbox"] {
+	width: 15px;
+	height: 15px;
+	vertical-align: middle;
+	border: 1px solid #a8a8a8;
+	background-color: #fff;
+
+/* 	-webkit-appearance: none; */
+	appearance: none;
+
+}
+
+input[type="checkbox"]:checked {
+	
+}
+
+input[type="radio"]+label, input[type="checkbox"]+label {
+	display: inline-block;
+	margin-left: 9px;
+	font-size: 14px;
+	color: #707070;
+	line-height: 1em;
+	vertical-align: middle;
+}
+
+select {
+	height: 34px;
+	margin: 0;
+	padding: 0 18px 0 4px;
+	font-size: 14px;
+	color: #666;
+	border: 1px solid #d5d5d5;
+	vertical-align: top;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff !important;
+}
+
+select {
+	background: url("../../resources/images/mentors/arrow_drop_down.png") no-repeat 90% 50%;
+	background-size: 20px 20px;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+select.small {
+	height: 30px;
+	margin: 0;
+	padding: 0 25px 0 13px;
+	font-weight: 500;
+	font-size: 13px;
+	color: #262626;
+	border: 1px solid #d5d5d5;
+	border-radius: 15px;
+	vertical-align: top;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+textarea {
+	text-indent: 0px;
+	border: 1px solid #d5d5d5;
+	vertical-align: middle;
+	resize: none;
+	
+}
+
+pre {
+	overflow: auto;
+}
+
+label {
+	cursor: pointer;
+	font-size: 12px;
+	color: #000;
+}
+
+sub, sup {
+	vertical-align: baseline;
+}
+
+span {
+	display: inline-block;
+	zoom: 1;
+	*display: inline !important;
+}
+
+ul { list-style: none;}
+
+
+div.cont {
+	padding:70px 0;
+	height:auto;
+	width: 75%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+@media (max-width: 991.98px){
+	div.cont {
+	    padding:3%;
+	    margin:0 auto;
+	    width:100%;
+	    box-sizing: border-box;
+	}
+	
+}
+
+@media (max-width: 600px){
+	div.cont {
+	    padding:5%;
+	    margin:0 auto;
+	    width:100%;
+	    box-sizing: border-box;
+	}
+	
+}
+
+
+div#paging {
+	margin-top:40px;
+	text-align: center;
+	color:#26baee;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+div#paging a {
+	color:#666;
+	margin:0 8px;
+	font-size: 16px;
+}
+
+
+p.main_list_desc {
+	position: absolute;
+	top:210px;
+	left: 0;
+	font-size:50px;
+	font-weight: 700;
+	text-align: center;
+	width:100%;
+	color:#fff;
+	opacity: 0.8;
+}
+
+p.main_list_desc span {
+	margin-top:-10px;
+	font-size:20px;
+	color:#fff;
+	opacity: 1;
+}
