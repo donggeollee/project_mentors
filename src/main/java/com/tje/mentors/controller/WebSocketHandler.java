@@ -26,6 +26,7 @@ import com.google.gson.JsonObject;
 
 public class WebSocketHandler extends TextWebSocketHandler {
 	
+	// 상담에 참여하는 멤버들을 JSON 객체로 사용하기 위해 InnerClass 선언
 	private class Member implements Serializable{
 		private WebSocketSession session;
 		private String member_name;
@@ -88,25 +89,20 @@ public class WebSocketHandler extends TextWebSocketHandler {
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		
+			// 관리자, 멘토, 멘티 가 접속/메세지전송/종료 시 보내게 되는 메시지들을
+			// 모두 getPayload() 메서드로 받아서 상황에 맞게 분기함.
 			String msg = message.getPayload();
 			
 			String[] source = msg.split(",");
-			System.out.println("source[0] : " + source[0]);
-			System.out.println("source[1] : " + source[1]);
-			if( source.length >= 4) {
-			System.out.println("source[2] : " + source[2]);
-			System.out.println("source[3] : " + source[3]);
-			}
-			if( source.length == 5) {
-			System.out.println("source[4] : " + source[4]);	
-			}
+			
 			// 연결요청
 			if( source[0].equals("connect") ) { 
+				// 관리자 연결 요청 시 
 				if( source[1].equals("admin")) { 
 					adminSessionMap.put("admin", session);
 					jsonMenteeChatContents = new JSONObject();
 					jsonMentorChatContents = new JSONObject();
-					// chatMap에 값이 없으면 실행안됨. 키값이 없기 때문에 
+					// 멘토의 요청상담을 모두 관리자에게 전송
 					for ( String mentor_id : mentorChatMap.keySet()) {
 						String[] chatContents = mentorChatMap.get(mentor_id).split(",");
 						jsonArrayMessage = new JSONArray();
@@ -121,6 +117,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 						}
 					}
 					
+					// 멘티의 요청상담을 모두 관리자에게 전송
 					for ( String mentee_id : menteeChatMap.keySet()) {
 						String[] chatContents = menteeChatMap.get(mentee_id).split(",");
 						jsonArrayMessage = new JSONArray();
@@ -132,10 +129,11 @@ public class WebSocketHandler extends TextWebSocketHandler {
 							jsonMenteeChatContents.put(mentee_id+","+mentee_name, jsonArrayMessage);
 						}
 					}
+					// 관리자 접속에 따른 JSON 객체 생성
 					jsonSendObj.put("type", "adminConnect");
 					jsonSendObj.put("mentorChatRoom", jsonMentorChatContents);
 					jsonSendObj.put("menteeChatRoom", jsonMenteeChatContents);
-					System.out.println("admin이 접속했음"); 
+				// 멘토 연결 요청 시
 				} else if ( source[1].equals("mentor") ) { 
 					
 					if (mentorSessionMap.get(source[3]) != null) { 
@@ -149,6 +147,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 					jsonSendObj.put("mentorConnectMsg","mentor:"+ source[2]+"님이 상담을 요청했습니다:"+ LocalTime.now().toString().substring(0, 8));
 					jsonSendObj.put("type", "mentorConnect");
 					jsonSendObj.put("mentorInfo", source[2]+","+source[3]);
+				// 멘티 연결 요청 시
 				} else if( source[1].equals("mentee")) {
 					
 					if (menteeSessionMap.get(source[3]) != null) {
@@ -168,8 +167,9 @@ public class WebSocketHandler extends TextWebSocketHandler {
 					adminSessionMap.get("admin").sendMessage(new TextMessage(jsonSendObj.toJSONString()));
 				} 
 				
-			// 메세지 요청
+			// 메세지 전송 시
 			} else if ( source[0].equals("send")) { 
+				// 관리자가 멘토 or 멘티에게 메시지를 전송했을 시
 				if( source[1].equals("admin")) {
 					
 					String tempMsg = "admin:"+ source[2] + ":"+ LocalTime.now().toString().substring(0, 8);
@@ -200,6 +200,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 						}
 					}
 					adminSessionMap.get("admin").sendMessage(new TextMessage(jsonSendObj.toJSONString()));
+				// 멘토가 관리자에게 메세지 전송 시 
 				} else if ( source[1].equals("mentor")) {
 					String tempMsg = "mentor:"+ source[2] + ":"+ LocalTime.now().toString().substring(0, 8);
 					mentorChatMap.put(source[3], mentorChatMap.get(source[3]) + "," + tempMsg);
@@ -212,6 +213,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 						adminSessionMap.get("admin").sendMessage(new TextMessage(jsonSendObj.toJSONString()));
 					} 
 					mentorSessionMap.get(source[3]).getSession().sendMessage(new TextMessage(jsonSendObj.toJSONString()));
+				// 멘티가 관리자에게 메세지 전송 시 
 				} else if ( source[1].equals("mentee") ) {
 					String tempMsg = "mentee:"+ source[2] + ":"+ LocalTime.now().toString().substring(0, 8);
 					menteeChatMap.put(source[3], menteeChatMap.get(source[3]) + "," + tempMsg);
@@ -224,7 +226,10 @@ public class WebSocketHandler extends TextWebSocketHandler {
 						adminSessionMap.get("admin").sendMessage(new TextMessage(jsonSendObj.toJSONString()));
 					} 
 					menteeSessionMap.get(source[3]).getSession().sendMessage(new TextMessage(jsonSendObj.toJSONString()));
-				} else if ( source[1].equals("admin_image") ) {
+				} 
+				// drag&drop으로 이미지 전송까지 구현해보려 했지만, javascript에서 이미지를 base64 로 인코딩 후 
+				// 이미지를 전송하고자 할 때 데이터 크기가 큰 건 전송이 안되는 예외가 있음. 보류
+				/* else if ( source[1].equals("admin_image") ) {
 					
 				} else if ( source[1].equals("mentor_image") ) {
 					
@@ -240,8 +245,9 @@ public class WebSocketHandler extends TextWebSocketHandler {
 						adminSessionMap.get("admin").sendMessage(new TextMessage(jsonSendObj.toJSONString()));
 					} 
 					menteeSessionMap.get(source[4]).getSession().sendMessage(new TextMessage(jsonSendObj.toJSONString()));
-				} 
+				} */
 				
+			// 접속 종료 시	
 			} else if ( source[0].equals("close")) { 
 				if ( source[1].equals("admin") ) {
 					// 어드민 세션 삭제 
