@@ -63,7 +63,6 @@
 				alert("이미지 형식의 파일만 전송할 수 있습니다 \n ex) jpg,gif,png,jpeg")
 				return;
 			}
-				   
 			
 			// 이미지를 base64로 인코딩한  문자열이 웹소켓으로 전송되려할 시 close가 발생하는 이유를 모르겠다 
 			
@@ -72,8 +71,6 @@
 	 	    	 wsocket.send("send," + connectType + "_image" + "," + 
 			  				data + "," + member_id);
 		      })  */
-			
-		     
 				
 			/* var fileReader = new FileReader();
 			var encodingResult;
@@ -120,7 +117,7 @@
 			member_id = "${loginMember.id}";
 		} 
 		// 웹소켓 구동시 구동하는 서버 IP 로 바꿔줘야 합니다. --> adminChat.jsp 도 마찬가지
-		url = "ws://192.168.0.24:8080/mentors/inquiryChat";
+		url = "ws://192.168.45.162:8080/mentors/inquiryChat";
 		wsocket = new WebSocket(url);
  
 		wsocket.onopen = function() { 

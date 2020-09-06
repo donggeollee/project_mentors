@@ -40,9 +40,10 @@ public class AdminAccountDAO {
 		try {
 			
 		return this.jdbcTemplate.queryForObject
-				("select * from AdminAccount",new AdminAccountRowMapper());
+				("select * from adminaccount",new AdminAccountRowMapper());
 		
 		}catch (Exception e) {
+			System.out.println("22222");
 			return null;
 		}
 	}
