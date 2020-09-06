@@ -117,7 +117,7 @@
 			member_id = "${loginMember.id}";
 		} 
 		// 웹소켓 구동시 구동하는 서버 IP 로 바꿔줘야 합니다. --> adminChat.jsp 도 마찬가지
-		url = "ws://192.168.45.162:8080/mentors/inquiryChat";
+		url = "ws://182.215.139.141:8080/mentors/inquiryChat";
 		wsocket = new WebSocket(url);
  
 		wsocket.onopen = function() { 
