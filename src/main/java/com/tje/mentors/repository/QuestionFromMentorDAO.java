@@ -48,7 +48,7 @@ public class QuestionFromMentorDAO {
 	
 		public Object select(QuestionFromMentor model) {
 			return this.jdbcTemplate.queryForObject(
-					"select * from QuestionFromMentor where admin_req_id = ?", 
+					"select * from questionfrommentor where admin_req_id = ?", 
 					new QuestionRowMapper(), model.getAdmin_req_id());
 		}
 		
@@ -56,7 +56,7 @@ public class QuestionFromMentorDAO {
 		
 		public Object selectList(QuestionFromMentor model) {
 			List<QuestionFromMentor> result = this.jdbcTemplate.query(
-					"select * from QuestionFromMentor order by send_date desc",
+					"select * from questionfrommentor order by send_date desc",
 					new QuestionRowMapper());
 			
 			return result.isEmpty() ? null : result;
@@ -66,7 +66,7 @@ public class QuestionFromMentorDAO {
 		// 멘토가 작성한 전체글 목록 리스트 ( 정렬 -> 답변등록상태 N인 것만 제일 우선순위로 &최근 작성일자 순)
 				public Object selectListReplyCk(QuestionFromMentor model) {
 					List<QuestionFromMentor> result = this.jdbcTemplate.query(
-							"select * from QuestionFromMentor order by reply_ck asc, send_date desc",
+							"select * from questionfrommentor order by reply_ck asc, send_date desc",
 							new QuestionRowMapper());
 					
 					return result.isEmpty() ? null : result;

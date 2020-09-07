@@ -43,7 +43,7 @@ public class MyMentorDAO {
 	
 	public Object selectAll(int mentee_id) {
 		return this.jdbcTemplate.query(
-				"select DISTINCT * from MyMentor where mentee_id = ?", 
+				"select DISTINCT * from mymentor where mentee_id = ?", 
 				new MyMentorRowMapper(),mentee_id);
 	}
 	

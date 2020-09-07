@@ -36,7 +36,7 @@ public class QuestionFromMenteeDAO {
 	// 멘티가 작성한 글 상세 보기
 
 	public Object select(QuestionFromMentee model) {
-		return this.jdbcTemplate.queryForObject("select * from QuestionFromMentee where admin_req_id = ? ",
+		return this.jdbcTemplate.queryForObject("select * from questionfrommentee where admin_req_id = ? ",
 				new QuestionRowMapper(), model.getAdmin_req_id());
 	}
 
@@ -44,7 +44,7 @@ public class QuestionFromMenteeDAO {
 
 	public Object selectList(QuestionFromMentee model) {
 		List<QuestionFromMenti> result = this.jdbcTemplate
-				.query("select * from QuestionFromMentee order by send_date desc", new QuestionRowMapper());
+				.query("select * from questionfrommentee order by send_date desc", new QuestionRowMapper());
 
 		return result.isEmpty() ? null : result;
 
@@ -53,7 +53,7 @@ public class QuestionFromMenteeDAO {
 	// 멘티가 작성한 전체글 목록 리스트 ( 정렬 -> 답변등록상태 N인 것만 제일 우선순위로 &최근 작성일자 순)
 	public Object selectListReplyCk(QuestionFromMentee model) {
 		List<QuestionFromMenti> result = this.jdbcTemplate.query(
-				"select * from QuestionFromMentee order by reply_ck asc, send_date desc", new QuestionRowMapper());
+				"select * from questionfrommentee order by reply_ck asc, send_date desc", new QuestionRowMapper());
 
 		return result.isEmpty() ? null : result;
 

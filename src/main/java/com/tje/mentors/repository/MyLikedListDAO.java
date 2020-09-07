@@ -49,7 +49,7 @@ public class MyLikedListDAO {
 	
 	public Object selectAllDesc(int mentee_id,int page) {
 		List<MyLikedList> result = jdbcTemplate.query(
-				"select * from MyLikedList where mentee_id = ? order by like_id desc limit ?,?", 
+				"select * from mylikedlist where mentee_id = ? order by like_id desc limit ?,?", 
 				new MyLikedListRowMapper(), mentee_id,
 				(page - 1) * pagingInfoByFour.getPagingSize(), pagingInfoByFour.getPagingSize());
 		
@@ -58,7 +58,7 @@ public class MyLikedListDAO {
 	
 	public Object selectAllAsc(int mentee_id,int page) {
 		List<MyLikedList> result = jdbcTemplate.query(
-				"select * from MyLikedList where mentee_id = ? order by like_id limit ?,?", 
+				"select * from mylikedlist where mentee_id = ? order by like_id limit ?,?", 
 				new MyLikedListRowMapper(), mentee_id,
 				(page - 1) * pagingInfoByFour.getPagingSize(), pagingInfoByFour.getPagingSize());
 		
@@ -68,7 +68,7 @@ public class MyLikedListDAO {
 	public Integer selectLikedCount(int mentee_id) {
 		try {
 			return this.jdbcTemplate.queryForObject(
-					"select count(*) from likeTable where mentee_id = ?",
+					"select count(*) from liketable where mentee_id = ?",
 					Integer.class, mentee_id);
 		} catch (Exception e) {
 			return null;

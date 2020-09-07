@@ -41,14 +41,14 @@ public class MenteeWhoLikesMeDAO {
 	
 	public Object select(Mentor mentor) {
 		return this.jdbcTemplate.query(
-				"select * from MenteeWhoLikesMe where mentor_id = ?",
+				"select * from menteewholikesme where mentor_id = ?",
 				new MenteeWhoLikesMeRowMapper(), mentor.getMentor_id());
 	}
 	
 	/* 지은 추가 수정사항 - 이름 검색 */
 	public Object selectByName(MenteeWhoLikesMe model, int page) {
 		return this.jdbcTemplate.query(
-				"select * from MenteeWhoLikesMe where mentor_id = ? and mentee_name like ? limit ?,?",
+				"select * from menteewholikesme where mentor_id = ? and mentee_name like ? limit ?,?",
 				new MenteeWhoLikesMeRowMapper(), model.getMentor_id(), "%"+model.getMentee_name()+"%",
 				(page-1)*this.pagingInfo.getPagingSize(),
 				this.pagingInfo.getPagingSize());
@@ -58,7 +58,7 @@ public class MenteeWhoLikesMeDAO {
 	 //지은 추가 수정사항 - 이름 검색 페이징 카운트  페이징 처리
 	public Integer selectSearchByNameCount(MenteeWhoLikesMe model) {
 		return this.jdbcTemplate.queryForObject(
-				"select count(*) from MenteeWhoLikesMe where mentor_id = ? and mentee_name like ? ;",
+				"select count(*) from menteewholikesme where mentor_id = ? and mentee_name like ? ;",
 				Integer.class,model.getMentor_id(), "%"+model.getMentee_name()+"%");
 	}
 	
@@ -67,14 +67,14 @@ public class MenteeWhoLikesMeDAO {
 	/* 지은 추가 수정사항 - 페이징 카운트 */
 	public Integer selectByIDCount(MenteeWhoLikesMe model) {
 		return this.jdbcTemplate.queryForObject(
-				"select count(*) from MenteeWhoLikesMe where mentor_id = ?;",
+				"select count(*) from menteewholikesme where mentor_id = ?;",
 				Integer.class,model.getMentor_id());
 	}
 	
 	/* 지은 추가 수정사항 - 페이징 처리 - 정렬 (찜 최신 순 / 기본값)*/
 	public Object selectByMentee(int page, MenteeWhoLikesMe model) {
 		List<MenteeWhoLikesMe> result = this.jdbcTemplate.query(
-				"select * from MenteeWhoLikesMe where mentor_id = ? order by like_id desc limit ?,?",
+				"select * from menteewholikesme where mentor_id = ? order by like_id desc limit ?,?",
 				new MenteeWhoLikesMeRowMapper(), model.getMentor_id(), 
 				(page-1)*this.pagingInfo.getPagingSize(),
 				this.pagingInfo.getPagingSize());
@@ -87,7 +87,7 @@ public class MenteeWhoLikesMeDAO {
 	/* 지은 추가 수정사항 - 페이징 처리 - 정렬 (찜 과거 순) */
 	public Object selectByMenteeAsc(int page, MenteeWhoLikesMe model) {
 		List<MenteeWhoLikesMe> result = this.jdbcTemplate.query(
-				"select * from MenteeWhoLikesMe where mentor_id = ? order by like_id asc limit ?,?",
+				"select * from menteewholikesme where mentor_id = ? order by like_id asc limit ?,?",
 				new MenteeWhoLikesMeRowMapper(), model.getMentor_id(), 
 				(page-1)*this.pagingInfo.getPagingSize(),
 				this.pagingInfo.getPagingSize());
@@ -98,7 +98,7 @@ public class MenteeWhoLikesMeDAO {
 	/* 지은 추가 수정사항 - 페이징 처리  - 정렬 (클래스명 순) */
 	public Object selectByMenteeOrderByClass(int page, MenteeWhoLikesMe model) {
 		List<MenteeWhoLikesMe> result = this.jdbcTemplate.query(
-				"select * from MenteeWhoLikesMe where mentor_id = ? order by title asc limit ?,?",
+				"select * from menteewholikesme where mentor_id = ? order by title asc limit ?,?",
 				new MenteeWhoLikesMeRowMapper(), model.getMentor_id(), 
 				(page-1)*this.pagingInfo.getPagingSize(),
 				this.pagingInfo.getPagingSize());
@@ -111,7 +111,7 @@ public class MenteeWhoLikesMeDAO {
 	/* 지은 추가 수정사항 - 정렬 (이름순) */
 	public Object selectByMenteeName(int page, MenteeWhoLikesMe model) {
 		List<MenteeWhoLikesMe> result = this.jdbcTemplate.query(
-				"select * from MenteeWhoLikesMe where mentor_id = ? order by mentee_name limit ?,?",
+				"select * from menteewholikesme where mentor_id = ? order by mentee_name limit ?,?",
 				new MenteeWhoLikesMeRowMapper(), model.getMentor_id(),
 				(page-1)*this.pagingInfo.getPagingSize(),
 				this.pagingInfo.getPagingSize());

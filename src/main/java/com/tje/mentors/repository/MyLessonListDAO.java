@@ -46,19 +46,19 @@ public class MyLessonListDAO {
 	
 	public Object selectAll(int mentee_id) {
 		return this.jdbcTemplate.query(
-				"select * from MyLessonList", 
+				"select * from mylessonlist", 
 				new MyLessonListRowMapper());
 	}
 	
 	public Object selectProcess(int mentee_id) {
 		return this.jdbcTemplate.query(
-				"select * from MyLessonList where curStatus = ? and mentee_id = ?", 
+				"select * from mylessonlist where curStatus = ? and mentee_id = ?", 
 				new MyLessonListRowMapper(), "P", mentee_id);
 	}
 	
 	public Object selectFinished(int mentee_id) {
 		return this.jdbcTemplate.query(
-				"select * from MyLessonList where curStatus = ? and mentee_id = ?", 
+				"select * from mylessonlist where curStatus = ? and mentee_id = ?", 
 				new MyLessonListRowMapper(), "F", mentee_id);
 	}
 	
