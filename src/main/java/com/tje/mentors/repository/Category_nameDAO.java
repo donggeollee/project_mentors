@@ -36,7 +36,7 @@ public class Category_nameDAO {
 		
 		try {
 			return this.jdbcTemplate.queryForObject(
-					"select * from CATEGORY_NAME where category_id = ?", 
+					"select * from category_name WHERE category_id = ?", 
 					new CategoryNameRowMapper(), category_id);
 		}catch(Exception e) {
 			return null;
@@ -46,7 +46,7 @@ public class Category_nameDAO {
 	public Object selectByCategoryBig(String big) {
 		try {
 			return this.jdbcTemplate.queryForObject(
-					"select * from CATEGORY_NAME where big = upper(?)", 
+					"select * from category_name where big = upper(?)", 
 					new CategoryNameRowMapper(), big);
 		}catch(Exception e) {
 			return null;
